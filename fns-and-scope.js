@@ -49,7 +49,7 @@ function isTyler(name) {
 //What is the difference between arguments and parameters?
 
   //Answer Here
-
+//Argument is the value passed to the function. Parameter refers to the variables that are used in the function declaration/definition to represent those arguments that were send to the function during the function call.
 
 //////////////////PROBLEM 5////////////////////
 
@@ -59,7 +59,7 @@ function isTyler(name) {
 
 
   //Answer Here
-
+//fals, null, undefined, 0 , Nan, '', ""
 
 
 //////////////////PROBLEM 6////////////////////
@@ -70,9 +70,9 @@ function isTyler(name) {
 
   //Code Here
 function myName() {
-  return "Thomas";
+  return myName = "Thomas";
 }
-alert(myName());
+myName();
 
 //Now save the function definition of myName into a new variable called newMyName
 
@@ -91,9 +91,17 @@ alert(newMyName());
 //Create a function called outerFn which returns an anonymous function which returns your name.
 
   //Code Here
-
+  function outerFn () {
+    return function (){
+      return "Thomas";
+    };
+  }
 //Now save the result of invoking outerFn into a variable called innerFn.
 
   //Code Here
+  function innerFn(){
+    return outerFn;
+  }
 
 //Now invoke innerFn.
+innerFn();
